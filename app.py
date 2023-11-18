@@ -40,7 +40,7 @@ def create_weaviate_client():
     return client
 
 def hybrid_search(query):
-    for attempt in range(2):
+    for attempt in range(10):
         try:
             client = create_weaviate_client()
             response = (
