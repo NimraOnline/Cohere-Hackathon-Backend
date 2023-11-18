@@ -2,7 +2,7 @@ python-dotenv
 cohere
 flask
 flask-cors
-weaviate-client==3.14.0
+weaviate-client==3.*
 langchain
 gunicorn==20.1.0
 requests==2.26.0
