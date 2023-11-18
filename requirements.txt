@@ -5,3 +5,4 @@ flask-cors
 weaviate-client
 langchain
 gunicorn==20.1.0
+requests==2.26.0
