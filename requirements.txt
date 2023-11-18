@@ -4,3 +4,4 @@ flask
 flask-cors
 weaviate-client
 langchain
+gunicorn==20.1.0
