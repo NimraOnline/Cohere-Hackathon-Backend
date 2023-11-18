@@ -26,14 +26,26 @@ cors = CORS(app, resources={r"*": {"origins": "*"}})
 
 def create_weaviate_client():
     if not hasattr(g, 'weaviate_client'):
-        auth_config = weaviate.auth.AuthApiKey(api_key=WEAVIATE_KEY)
+        # auth_config = weaviate.auth.AuthApiKey(api_key=WEAVIATE_KEY)
+        # client = weaviate.Client(
+        #     url=WEAVIATE_URL,
+        #     auth_client_secret=auth_config,
+        #     additional_headers={
+        #         "X-Cohere-Api-Key": API_KEY
+        #     }
+        # )
         client = weaviate.Client(
-            url=WEAVIATE_URL,
-            auth_client_secret=auth_config,
+            url=WEAVIATE_URL,  # Replace w/ your endpoint
+            auth_client_secret=weaviate.AuthClientPassword(
+                username = "oumaymaessarhii",  
+                password = "yT_nEDyAAf3z7ff", 
+            ),
             additional_headers={
                 "X-Cohere-Api-Key": API_KEY
             }
         )
+
+
         if not client.is_ready():
             raise RuntimeError("Weaviate client failed to connect.")
         
